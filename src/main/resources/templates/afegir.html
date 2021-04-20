@@ -14,6 +14,7 @@
     <input type="text" id="id" placeholder="usuario" th:field="*{username}">
     <input type="text" id="nom" placeholder="password" th:field="*{password}">
      <input type="text" id="rol" placeholder="ROL" th:field="*{rol}"><br/>
+
     <button type="submit">Registrar</button>
 </form>
 <form th:action="@{/logout}" method="post">

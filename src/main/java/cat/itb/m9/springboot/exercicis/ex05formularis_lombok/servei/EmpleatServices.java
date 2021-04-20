@@ -19,15 +19,15 @@ public class EmpleatServices {
         return (List<Empleat>) repositori.findAll();
     }
     public List<Empleat> llistatOrdenatPerNom() {
-//        Collections.sort(repositori, new Comparator<Empleat>() {
-//            @Override
-//            public int compare(Empleat e1, Empleat e2) {
-//                return e1.getNom().compareToIgnoreCase(e2.getNom());
-//            }
-//        });
-        return (List<Empleat>) repositori.findAll();
+        return repositori.findAllByOrderByNomAsc();
+    }
+    public List<Empleat> llistatMostrarDirectius() {
+        return repositori.findAllByDirectiuIsTrue();
     }
 
+    public List<Empleat> llistatOrdenatPerCorreu() {
+        return repositori.findAllByOrderByEmailAsc();
+    }
 //    }
     public Empleat consultaPerId(int id){
        return repositori.findById(id).orElse(null);
@@ -37,6 +37,8 @@ public class EmpleatServices {
 
     }
 
+
+
     public void subsistuir(Empleat e){
         repositori.save(e);
     }
@@ -44,7 +46,7 @@ public class EmpleatServices {
     @PostConstruct
     public void init() {
 
-            repositori.save(new Empleat(1, "Montse Madridejos", "montse@itb.cat", "677123456",true));
+            repositori.save(new Empleat(1, "Montse Madridejos", "montse@itb.cat", "777123456",true));
               repositori.save(new Empleat(2, "Alberto Vila", "alberto@itb.cat", "699876543",true));
                        repositori.save(new Empleat(3, "Robert López", "robert@bbc.com", "123456789",false));
 

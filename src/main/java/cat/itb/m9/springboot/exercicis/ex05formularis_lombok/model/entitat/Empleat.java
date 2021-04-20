@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -18,6 +20,7 @@ public class Empleat {
     private String email;
     private String telefon;
     private Boolean directiu;
+
 
     public Empleat(int id, String nom, String email, String telefon, Boolean directiu) {
         this.id = id;

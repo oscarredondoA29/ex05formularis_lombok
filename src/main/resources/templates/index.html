@@ -7,7 +7,9 @@
 <body>
 
 <a href="/empleats/list">Llistar empleats </a><br/>
-<a href="/empleats/listOrdenat">Llistar empleats ordenats</a><br/>
+<a href="/empleats/listOrdenat">Llistar empleats ordenats per nom</a><br/>
+<a href="/empleats/listOrdenatEmail">Llistar empleats ordenats  per correu</a><br/>
+<a href="/empleats/directius">Llistar empleats directivos</a><br/>
 <a href="/empleats/new">Afegir empleats</a><br/>
 <form th:action="@{/logout}" method="post">
     <input type="submit" value="Sortir (Sign Out)"/>
@@ -15,9 +17,7 @@
 <form th:action="@{/register/new}" method="get">
     <input type="submit" value="Register"/>
 </form>
-<form th:action="@{/login}" method="post">
-    <input type="submit" value="Login"/>
-</form>
+
 
 </body>
 </html>

@@ -23,12 +23,7 @@ public class UserService {
 
     @PostConstruct
     public void init(){
-//        repository.addAll(
-////                Arrays.asList(
-////                         new Usuari("oscar",BCrypt.hashpw("oscar",BCrypt.gensalt(7)),"ADMIN"),
-////                        new Usuari("raul",BCrypt.hashpw("raul",BCrypt.gensalt(7)),"USER"))
-////                );
-////
+
         repository.save(new Usuari("oscar",BCrypt.hashpw("oscar",BCrypt.gensalt(7)),"ADMIN"));
         repository.save(new Usuari("raul",BCrypt.hashpw("raul",BCrypt.gensalt(7)),"USER"));
     }

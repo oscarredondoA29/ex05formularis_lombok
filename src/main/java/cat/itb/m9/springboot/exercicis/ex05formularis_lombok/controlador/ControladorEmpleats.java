@@ -28,7 +28,18 @@ public class ControladorEmpleats {
         return "llistatOrdenatPerNom";
     }
 
+    //ordenats per email
+    @GetMapping("/empleats/listOrdenatEmail")
+    public String llistarOrdenatperemail(Model m){
+        m.addAttribute("llistaEmpleats",service.llistatOrdenatPerCorreu());
+        return "llistatOrdenatPerCorreo";
+    }
 
+    @GetMapping("/empleats/directius")
+    public String llistarDirectius(Model m){
+        m.addAttribute("llistaEmpleats",service.llistatMostrarDirectius());
+        return "llistatDirectius";
+    }
     //eliminar ex5
     @GetMapping("/eliminar")
     public String eliminar(@RequestParam("id") int id){
@@ -42,7 +53,7 @@ public class ControladorEmpleats {
         Empleat  empleat= service.consultaPerId(id);
         service.eliminarPerId(id);
 
-        //todo hacerlo con rest  es decir que me envie a otra pagina  y me añada uno nuevo  y me elimine este
+
         return "redirect:/empleats/modificar";
     }
     @GetMapping("/modificar/sumbit/{id}")

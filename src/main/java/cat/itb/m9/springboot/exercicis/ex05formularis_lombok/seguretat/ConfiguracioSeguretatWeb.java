@@ -33,21 +33,19 @@ public class ConfiguracioSeguretatWeb extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/","/login","/register/**","/error","/",  "/registre").permitAll()
+                .antMatchers("/","/login","/register/**","/error","/",  "/registre","/empleats/listOrdenatEmail","/empleats/directius","/loginerror").permitAll()
                 .antMatchers("/empleats/edit/**","/empleats/new/submit","/empleats/modificar/**","/empleats/list").authenticated()
                 .antMatchers("/**").hasRole("ADMIN")
                 .and()
                 .formLogin()
                 .loginPage("/login")
                 .permitAll()
+                .failureUrl("/loginerror")
                 .and()
                 .logout()
                 .logoutSuccessUrl("/")
                 .permitAll();
-//                http.csrf().disable(); //per h2-console
-//                http.headers().frameOptions().disable();
-
-                //todo conraul no puedo hacer  cosas
+                //no va  el failure url porque al subirlo al postgres te  cambia la ruta y no  es con el / no  encuentra la  ruta
 
     }
 }
