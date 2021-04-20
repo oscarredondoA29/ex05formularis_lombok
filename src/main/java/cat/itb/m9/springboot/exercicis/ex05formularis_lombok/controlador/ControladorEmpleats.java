@@ -50,8 +50,7 @@ public class ControladorEmpleats {
 
     @GetMapping("/empleats/edit/{id}")
     public String modificarMaker(@PathVariable("id")  int  id){
-        Empleat  empleat= service.consultaPerId(id);
-        service.eliminarPerId(id);
+
 
 
         return "redirect:/empleats/modificar";
