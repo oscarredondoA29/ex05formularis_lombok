@@ -20,12 +20,12 @@ public class ControladorLogin {
 //
     @GetMapping("/login")
     public String login(){
-        return "/login.html";
+        return "login.html";
     }
 
     @GetMapping("/error")
     public String error(){
-        return "/merror.html";
+        return "error.html";
     }
 
     /* inici de l'aplicació. Anem a afegir Empleats amb un formulari*/
