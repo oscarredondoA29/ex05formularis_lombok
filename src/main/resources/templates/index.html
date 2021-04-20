@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inici Aplicació</title>
+</head>
+<body>
+
+<a href="/empleats/list">Llistar empleats </a><br/>
+<a href="/empleats/listOrdenat">Llistar empleats ordenats</a><br/>
+<a href="/empleats/new">Afegir empleats</a><br/>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sortir (Sign Out)"/>
+</form>
+<form th:action="@{/register/new}" method="get">
+    <input type="submit" value="Register"/>
+</form>
+<form th:action="@{/login}" method="post">
+    <input type="submit" value="Login"/>
+</form>
+
+</body>
+</html>

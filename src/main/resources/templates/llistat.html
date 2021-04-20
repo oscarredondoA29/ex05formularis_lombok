@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Llistat</title>
+</head>
+<body>
+<thead>
+<tr>
+    <th>ID</th>
+    <th>Nom</th>
+    <th>Email</th>
+    <th>Telèfon</th>
+    <th>Directiu</th>
+</tr></br>
+</thead>
+<tbody>
+<tr th:each="emp : ${llistaEmpleats}">
+    <td th:text="${emp.id}">id</td>
+    <td th:text="${emp.nom}">Bla Bla Car</td>
+    <td th:text="${emp.email}">bla@ole.com</td>
+    <td th:text="${emp.telefon}">123456789</td>
+    <td th:text="${emp.directiu}">false</td>
+    <a th:href="@{/eliminar/(id=${emp.id})}">Eliminar</a>
+    <a th:href="@{/empleats/edit/{id}(id=${emp.id})}">MOdificar</a><br/>
+</tr>
+
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sortir (Sign Out)"/>
+</form>
+</tbody>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!-- plantilla afegir.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Afegir Empleat</title>
+</head>
+<body>
+
+
+<form method="post" action="#" th:action="@{/empleats/new/submit}" th:object="${empleatForm}">
+    <!--<form method="post" action="/empleats/new/submit" th:object="${empleatForm}"> -->
+    <h1>Nou empleat</h1>
+    <input type="text" id="id" placeholder="1" th:field="*{id}">
+    <input type="text" id="nom" placeholder="Nom" th:field="*{nom}">
+    <input type="text" id="email" placeholder="a@a.com" th:field="*{email}">
+    <input type="text" id="telefon" placeholder="93123456" th:field="*{telefon}">
+    <input type="text" id="directiu" placeholder="false" th:field="*{directiu}">
+    <button type="submit">Enviar</button>
+</form>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sortir (Sign Out)"/>
+</form>
+
+</body>
+</html>

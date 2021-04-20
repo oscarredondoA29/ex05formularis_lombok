@@ -1,0 +1,24 @@
+<!-- plantilla afegir.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Afegir Empleat</title>
+</head>
+<body>
+
+
+<form method="post" action="#" th:action="@{/register/new/submit}" th:object="${usuariForm}">
+<!--<form method="post" action="/empleats/new/submit" th:object="${empleatForm}"> -->
+    <h1>Nou usuari</h1>
+    <input type="text" id="id" placeholder="usuario" th:field="*{username}">
+    <input type="text" id="nom" placeholder="password" th:field="*{password}">
+     <input type="text" id="rol" placeholder="ROL" th:field="*{rol}"><br/>
+    <button type="submit">Registrar</button>
+</form>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sortir (Sign Out)"/>
+</form>
+
+</body>
+</html>
